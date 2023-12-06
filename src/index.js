@@ -1,5 +1,5 @@
  const carStock = require("./controller/car management");
- const {add,generatingRandomPlateNumber}=carStock;
+ const {add,generatingRandomPlateNumber,deletingCar}=carStock;
  //--------Add new Car--------------------------------
 
  var newCar ={
@@ -12,4 +12,9 @@
 
  }
  add(newCar);
+ //-------------------------------- deleting car--------------------------------
+ deletingCar('URD201W');
+ //--------------------------------update car--------------------------------
+updateCars ("RAD801A","color","purple");
+
  

@@ -25,8 +25,42 @@ const add =(newCar) =>{
 
 
 };
+//---------Remove Car--------------------------------------------------------
+
+const deletingCar =(plateNumber) =>{
+    carExists={};
+    carExists=carStock.find(carExists=>carExists.plateNumber ===plateNumber);
+    if(!carExists){
+        console.log("car does not exist");
+
+    }
+    else{
+        var remainingCars=[];
+        remainingCars=carStock.filter(remainingCars=>remainingCars.plateNumber!==plateNumber);
+        console.log("-----------------Removing car----------------");
+        console.log("car deleted successfully");
+            console.log(remainingCars);
+        
+    }
+}
+updateCars =(plateNumber,key,value) =>{
+    carExists={};
+    carExists=carStock.find(carExists=>carExists.plateNumber ===plateNumber);
+    if(!carExists){
+        console.log("car does not exist");
+    }
+        else{
+            carExists[key]=value;
+            console.log("car updated successfully");
+            console.log(carExists);
+        }
+
+}
+
 
 module.exports ={
     add,
     generatingRandomPlateNumber,
+    deletingCar,
+    updateCars,
 }
